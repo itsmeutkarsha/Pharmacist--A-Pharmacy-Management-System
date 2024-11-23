@@ -1,0 +1,86 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacist Dashboard</title>
+    <link rel="stylesheet" href="{% static 'core/dashboard.css' %}">
+</head>
+<body>
+    <h1>Pharmacist Dashboard</h1>
+
+    <section>
+        <h2>Prescriptions</h2>
+        <a href="{% url 'prescription_list' %}">View All Prescriptions</a> |
+        <a href="{% url 'prescription_create' %}">Create New Prescription</a>
+    </section>
+
+    <section>
+        <h2>Prescription Items</h2>
+        <a href="{% url 'prescriptionitem_list' %}">View All Prescription Items</a> |
+        <a href="{% url 'prescriptionitem_create' %}">Add New Prescription Item</a>
+    </section>
+
+    <section>
+        <h2>Customers</h2>
+        <a href="{% url 'customer_list' %}">View All Customers</a> |
+        <a href="{% url 'customer_create' %}">Register New Customer</a>
+    </section>
+
+    <section>
+        <h2>Medicines</h2>
+        <a href="{% url 'medicine_list' %}">View All Medicines</a> |
+        <a href="{% url 'medicine_create' %}">Add New Medicine</a>
+    </section>
+
+</body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacist Dashboard</title>
+    <link rel="stylesheet" href="{% static 'core/dashboard.css' %}">
+</head>
+<body>
+    <h1>Pharmacist Dashboard</h1>
+
+    <div class="dashboard-grid">
+        <!-- Prescriptions Section -->
+        <section>
+            <h2>Prescriptions</h2>
+            <p>Manage and create patient prescriptions.</p>
+            <a href="{% url 'prescription_list' %}">View All Prescriptions</a> 
+            <a href="{% url 'prescription_create' %}">Create New Prescription</a>
+        </section>
+
+        <!-- Prescription Items Section -->
+        <section>
+            <h2>Prescription Items</h2>
+            <p>Manage items associated with prescriptions.</p>
+            <a href="{% url 'prescriptionitem_list' %}">View All Prescription Items</a> 
+            <a href="{% url 'prescriptionitem_create' %}">Add New Prescription Item</a>
+        </section>
+
+        <!-- Customers Section -->
+        <section>
+            <h2>Customers</h2>
+            <p>Manage customer records and registration.</p>
+            <a href="{% url 'customer_list' %}">View All Customers</a> 
+            <a href="{% url 'customer_create' %}">Register New Customer</a>
+        </section>
+
+        <!-- Medicines Section -->
+        <section>
+            <h2>Medicines</h2>
+            <p>Manage medicine inventory and records.</p>
+            <a href="{% url 'medicine_list' %}">View All Medicines</a> 
+            <a href="{% url 'medicine_create' %}">Add New Medicine</a>
+        </section>
+    </div>
+</body>
+</html>

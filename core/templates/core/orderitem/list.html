@@ -1,0 +1,33 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Order Item List{% endblock %}
+
+{% block content %}
+    <h2>Order Item List</h2>
+    <a href="{% url 'orderitem_create' %}">Add New Order Item</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Medicine</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in object_list %}
+                <tr>
+                    <td>{{ order_item.order }}</td>
+                    <td>{{ order_item.medicine }}</td>
+                    <td>{{ order_item.quantity }}</td>
+                    <td>{{ order_item.cost }}</td>
+                    <td>
+                        <a href="{% url 'orderitem_update' order_item.pk %}">Edit</a> |
+                        <a href="{% url 'orderitem_delete' order_item.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Customer List{% endblock %}
+
+{% block content %}
+    <h2>Customer List</h2>
+    <a href="{% url 'customer_create' %}">Add New Customer</a>
+
+    <form method="get">
+        {{ filterset.form.as_p }}
+        <button type="submit">Filter</button>
+        <a href="{% url 'customer_list' %}">Clear Filters</a>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in object_list %}
+                <tr>
+                    <td>{{ customer.first_name }}</td>
+                    <td>{{ customer.last_name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone_number }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>
+                        <a href="{% url 'customer_update' customer.pk %}">Edit</a> |
+                        <a href="{% url 'customer_delete' customer.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+

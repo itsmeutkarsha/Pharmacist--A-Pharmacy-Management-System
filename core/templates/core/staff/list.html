@@ -1,0 +1,37 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Staff List{% endblock %}
+
+{% block content %}
+    <h2>Staff List</h2>
+    <a href="{% url 'staff_create' %}">Add New Staff</a>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Role</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for staff in object_list %}
+                <tr>
+                    <td>{{ staff.first_name }}</td>
+                    <td>{{ staff.last_name }}</td>
+                    <td>{{ staff.role }}</td>
+                    <td>{{ staff.username }}</td>
+                    <td>{{ staff.email }}</td>
+                    <td>{{ staff.phone_number }}</td>
+                    <td>
+                        <a href="{% url 'staff_update' staff.pk %}">Edit</a> |
+                        <a href="{% url 'staff_delete' staff.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

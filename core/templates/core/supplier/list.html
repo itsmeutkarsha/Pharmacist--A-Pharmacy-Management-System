@@ -1,0 +1,42 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Supplier List{% endblock %}
+
+{% block content %}
+    <h2>Supplier List</h2>
+    <a href="{% url 'supplier_create' %}">Add New Supplier</a>
+
+    <form method="get">
+        {{ filterset.form.as_p }}
+        <button type="submit">Filter</button>
+        <a href="{% url 'supplier_list' %}">Clear Filters</a>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact Person</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for supplier in object_list %}
+                <tr>
+                    <td>{{ supplier.name }}</td>
+                    <td>{{ supplier.contact_person }}</td>
+                    <td>{{ supplier.phone_number }}</td>
+                    <td>{{ supplier.email }}</td>
+                    <td>{{ supplier.address }}</td>
+                    <td>
+                        <a href="{% url 'supplier_update' supplier.pk %}">Edit</a> |
+                        <a href="{% url 'supplier_delete' supplier.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

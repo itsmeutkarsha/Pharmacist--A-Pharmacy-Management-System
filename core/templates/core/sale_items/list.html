@@ -1,0 +1,38 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Sale Item List{% endblock %}
+
+{% block content %}
+    <h2>Sale Item List</h2>
+    <a href="{% url 'saleitem_create' %}">Add New Sale Item</a>
+
+    <form method="get">
+        {{ filterset.form.as_p }}
+        <button type="submit">Filter</button>
+        <a href="{% url 'saleitem_list' %}">Clear Filters</a>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Medicine</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale_item in object_list %}
+                <tr>
+                    <td>{{ sale_item.medicine }}</td>
+                    <td>{{ sale_item.quantity }}</td>
+                    <td>{{ sale_item.price }}</td>
+                    <td>
+                        <a href="{% url 'saleitem_update' sale_item.pk %}">Edit</a> |
+                        <a href="{% url 'saleitem_delete' sale_item.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

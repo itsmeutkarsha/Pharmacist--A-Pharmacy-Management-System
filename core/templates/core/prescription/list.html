@@ -1,0 +1,33 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Prescription List{% endblock %}
+
+{% block content %}
+    <h2>Prescription List</h2>
+    <a href="{% url 'prescription_create' %}">Add New Prescription</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Doctor Name</th>
+                <th>Date Issued</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prescription in object_list %}
+                <tr>
+                    <td>{{ prescription.customer }}</td>
+                    <td>{{ prescription.doctor_name }}</td>
+                    <td>{{ prescription.date_issued }}</td>
+                    <td>{{ prescription.notes }}</td>
+                    <td>
+                        <a href="{% url 'prescription_update' prescription.pk %}">Edit</a> |
+                        <a href="{% url 'prescription_delete' prescription.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

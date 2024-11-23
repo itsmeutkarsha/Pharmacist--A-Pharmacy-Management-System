@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pharmacist</title>
+    <link rel="stylesheet" href="{% static 'core/main1.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Pharmacist</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'core-home'%}">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <!-- <li><a href="#team">Meet the Team</a></li> -->
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#community">Community</a></li>
+                <!-- <li><a href="#resources">Resources</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Welcome to Pharmacist</h2>
+            <p>At Pharmacist, we are dedicated to providing the highest quality of pharmaceutical care and improving the health of our community.</p>
+        </section>
+
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to ensure that every customer receives personalized and professional care tailored to their health needs.</p>
+        </section>
+
+        <section id="testimonials">
+            <h2>Customer Testimonials</h2>
+            <blockquote>
+                <p>"Pharmacist has always provided excellent service and care for my family!" - <em>Maria G.</em></p>
+            </blockquote>
+            <blockquote>
+                <p>"The team is knowledgeable and always ready to help." - <em>John R.</em></p>
+            </blockquote>
+            <!-- Add more testimonials as needed -->
+        </section>
+
+        <section id="community">
+            <h2>Community Involvement</h2>
+            <p>We actively participate in local health fairs and community wellness programs to promote health education and awareness.</p>
+        </section>
+
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@pharmacist.com</p>
+            <p>Follow us on social media:</p>
+            <ul>
+                <li><a href="https://facebook.com/pharmacist">Facebook</a></li>
+                <li><a href="https://twitter.com/pharmacist">Twitter</a></li>
+                <li><a href="https://instagram.com/pharmacist">Instagram</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pharmacist. All rights reserved.</p>
+    </footer>
+</body>
+</html>

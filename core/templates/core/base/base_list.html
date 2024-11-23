@@ -1,0 +1,23 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}List View{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/base_list.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Optional navigation or header content -->
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Optional footer content -->
+    </footer>
+</body>
+</html>
+
+

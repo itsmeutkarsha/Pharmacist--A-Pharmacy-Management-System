@@ -1,0 +1,29 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Inventory Log List{% endblock %}
+
+{% block content %}
+    <h2>Inventory Log List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Medicine</th>
+                <th>Staff</th>
+                <th>Action</th>
+                <th>Quantity Changed</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in object_list %}
+                <tr>
+                    <td>{{ log.medicine }}</td>
+                    <td>{{ log.staff }}</td>
+                    <td>{{ log.action }}</td>
+                    <td>{{ log.quantity_changed }}</td>
+                    <td>{{ log.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

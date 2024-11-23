@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #00c896; /* Pharmacy brand color */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #00c896;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+blockquote {
+    background: #e9ecef;
+    border-left: 5px solid #00c896;
+    margin: 1rem 0;
+    padding: 10px;
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #00c896;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}

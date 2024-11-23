@@ -1,0 +1,86 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="{% static 'core/dashboard.css' %}">
+</head>
+<body>
+    <h1>Manager Dashboard</h1>
+
+<div class=" dashboard-grid ">
+    <section>
+        <h2>Customers</h2>
+        <a href="{% url 'customer_list' %}">View All Customers</a> 
+        <a href="{% url 'customer_create' %}">Add New Customer</a>
+    </section>
+
+
+    <section>
+        <h2>Suppliers</h2>
+        <a href="{% url 'supplier_list' %}">View All Suppliers</a> 
+        <a href="{% url 'supplier_create' %}">Add New Supplier</a>
+    </section>
+
+
+    <section>
+        <h2>Medicines</h2>
+        <a href="{% url 'medicine_list' %}">View All Medicines</a> 
+        <a href="{% url 'medicine_create' %}">Add New Medicine</a>
+    </section>
+
+    <section>
+        <h2>Prescriptions</h2>
+        <a href="{% url 'prescription_list' %}">View All Prescriptions</a> 
+        <a href="{% url 'prescription_create' %}">Add New Prescription</a>
+    </section>
+
+    <section>
+        <h2>Prescription Items</h2>
+        <a href="{% url 'prescriptionitem_list' %}">View All Prescription Items</a> 
+        <a href="{% url 'prescriptionitem_create' %}">Add New Prescription Item</a>
+    </section>
+
+
+    <section>
+        <h2>Orders</h2>
+        <a href="{% url 'order_list' %}">View All Orders</a> 
+        <a href="{% url 'order_create' %}">Add New Order</a>
+    </section>
+
+
+    <section>
+        <h2>Order Items</h2>
+        <a href="{% url 'orderitem_list' %}">View All Order Items</a> 
+        <a href="{% url 'orderitem_create' %}">Add New Order Item</a>
+    </section>
+
+
+    <section>
+        <h2>Roles</h2>
+        <a href="{% url 'role_list' %}">View All Roles</a> 
+        <a href="{% url 'role_create' %}">Add New Role</a>
+    </section>
+
+
+    <section>
+        <h2>Staff</h2>
+        <a href="{% url 'staff_list' %}">View All Staff</a> 
+        <a href="{% url 'staff_create' %}">Add New Staff</a>
+    </section>
+
+
+    <section>
+        <h2>Inventory Logs</h2>
+        <a href="{% url 'inventorylog_list' %}">View All Inventory Logs</a> 
+        <a href="{% url 'inventorylog_create' %}">Create New Inventory Log</a>
+    </section>
+</div>
+    
+
+</body>
+</html>
+

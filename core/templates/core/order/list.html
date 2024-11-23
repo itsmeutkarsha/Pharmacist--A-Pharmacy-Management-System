@@ -1,0 +1,31 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Order List{% endblock %}
+
+{% block content %}
+    <h2>Order List</h2>
+    <a href="{% url 'order_create' %}">Add New Order</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Supplier</th>
+                <th>Order Date</th>
+                <th>Total Cost</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in object_list %}
+                <tr>
+                    <td>{{ order.supplier }}</td>
+                    <td>{{ order.order_date }}</td>
+                    <td>{{ order.total_cost }}</td>
+                    <td>
+                        <a href="{% url 'order_update' order.pk %}">Edit</a> |
+                        <a href="{% url 'order_delete' order.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

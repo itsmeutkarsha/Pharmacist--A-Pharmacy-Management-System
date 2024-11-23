@@ -1,0 +1,35 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Prescription Item List{% endblock %}
+
+{% block content %}
+    <h2>Prescription Item List</h2>
+    <a href="{% url 'prescriptionitem_create' %}">Add New Prescription Item</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Prescription</th>
+                <th>Medicine</th>
+                <th>Dosage</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prescription_item in object_list %}
+                <tr>
+                    <td>{{ prescription_item.prescription }}</td>
+                    <td>{{ prescription_item.medicine }}</td>
+                    <td>{{ prescription_item.dosage }}</td>
+                    <td>{{ prescription_item.quantity }}</td>
+                    <td>{{ prescription_item.price }}</td>
+                    <td>
+                        <a href="{% url 'prescriptionitem_update' prescription_item.pk %}">Edit</a> |
+                        <a href="{% url 'prescriptionitem_delete' prescription_item.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

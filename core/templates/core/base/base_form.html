@@ -1,0 +1,38 @@
+<!-- {% block content %}
+<h2>{{ model_name }} Form</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %} -->
+
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Form{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/base_form.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Optional navigation or header content -->
+    </header>
+    <main>
+        <h2>{% block form_title %}Form{% endblock %}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+
+            {{ form|crispy }}
+            <button type="submit">Submit</button>
+        </form>
+        {% block extra_content %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Optional footer content -->
+    </footer>
+</body>
+</html>

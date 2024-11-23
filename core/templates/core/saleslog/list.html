@@ -1,0 +1,31 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Sales Log List{% endblock %}
+
+{% block content %}
+    <h2>Sales Log List</h2>
+    <a href="{% url 'saleslog_create' %}">Add New Log</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Sale</th>
+                <th>Staff</th>
+                <th>Action</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in object_list %}
+                <tr>
+                    <td>{{ log.sale }}</td>
+                    <td>{{ log.staff }}</td>
+                    <td>{{ log.action }}</td>
+                    <td>
+                        <a href="{% url 'saleslog_update' log.pk %}">Edit</a> |
+                        <a href="{% url 'saleslog_delete' log.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

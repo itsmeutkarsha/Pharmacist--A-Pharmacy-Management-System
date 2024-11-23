@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier Dashboard</title>
+    <link rel="stylesheet" href="{% static 'core/dashboard.css' %}">
+</head>
+<body>
+    <h1>Cashier Dashboard</h1>
+
+    <div class="dashboard-grid">
+        <section>
+            <h2>Customers</h2>
+            <a href="{% url 'customer_list' %}">View All Customers</a> 
+            <a href="{% url 'customer_create' %}">Add New Customer</a>
+        </section>
+    
+      
+        <section>
+            <h2>Sale Items</h2>
+            <a href="{% url 'saleitem_list' %}">View All Sale Items</a> 
+            <a href="{% url 'saleitem_create' %}">Add New Sale Item</a>
+        </section>
+    
+       
+        <section>
+            <h2>Sales</h2>
+            <a href="{% url 'sale_list' %}">View All Sales</a> 
+            <a href="{% url 'sale_create' %}">Create New Sale</a>
+        </section>
+    
+        <section>
+            <h2>Sales Logs</h2>
+            <a href="{% url 'saleslog_list' %}">View All Sales Logs</a> 
+            <a href="{% url 'saleslog_create' %}">Create New Sales Log</a>
+        </section>
+    </div>
+   
+    
+
+</body>
+</html>

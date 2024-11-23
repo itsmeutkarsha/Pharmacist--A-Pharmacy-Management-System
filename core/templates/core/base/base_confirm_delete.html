@@ -1,0 +1,27 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Delete Confirmation{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/base_confirm_delete.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Optional navigation or header content -->
+    </header>
+    <main>
+        <h2>{% block confirm_title %}Are you sure you want to delete this item?{% endblock %}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+            <a href="{% url cancel_url %}">Cancel</a>
+        </form>
+    </main>
+    <footer>
+        <!-- Optional footer content -->
+    </footer>
+</body>
+</html>

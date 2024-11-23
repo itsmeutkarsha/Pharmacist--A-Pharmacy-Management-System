@@ -1,0 +1,57 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+header {
+    background: #2980b9; /* Blue header background */
+    color: #ffffff; /* White text color */
+    padding: 15px 0; /* Header padding */
+    text-align: center; /* Center text in header */
+}
+
+main {
+    max-width: 800px; /* Max width for the main content */
+    margin: 30px auto; /* Centering the main content */
+    padding: 20px;
+    background: #ffffff; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1, h2 {
+    margin-bottom: 20px; /* Space below the headings */
+    font-size: 1.75em; /* Heading size */
+    color: #2980b9; /* Blue color for headings */
+}
+
+ul, ol {
+    padding-left: 20px; /* Indent lists */
+    margin-bottom: 20px; /* Space below lists */
+}
+
+li {
+    padding: 10px; /* Padding around list items */
+    border-bottom: 1px solid #ccc; /* Light border for separation */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+li:hover {
+    background-color: #f7f7f7; /* Light background on hover */
+}
+
+footer {
+    text-align: center; /* Center align footer content */
+    margin-top: 20px; /* Space above footer */
+    font-size: 0.9em; /* Smaller footer text size */
+    color: #777; /* Grey text color */
+}
+

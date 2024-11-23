@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Customer</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">  <!-- Add your CSS path here -->
+</head>
+<body>
+    <h1>Select a Customer</h1>
+    
+    <!-- Display a list of customers -->
+    <table>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>
+                    <!-- Check if user has permission to edit customer data -->
+                    {% if perms.app.can_edit_customer_data %}
+                        <a href="{% url 'edit_customer_view' customer.id %}">Edit</a>
+                    {% else %}
+                        <span>No permission</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No customers found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Optional logout button -->
+    <a href="{% url 'core-logout' %}">Logout</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "core/base/base_list.html" %}
+
+{% block title %}Medicine List{% endblock %}
+
+{% block content %}
+    <h2>Medicine List</h2>
+    <a href="{% url 'medicine_create' %}">Add New Medicine</a>
+    
+  
+    <form method="get">
+        {{ filterset.form.as_p }}
+        <button type="submit">Filter</button>
+        <a href="{% url 'medicine_list' %}">Clear Filters</a>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Manufacturer</th>
+                <th>Batch Number</th>
+                <th>Expiry Date</th>
+                <th>Quantity in Stock</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for medicine in object_list %}
+                <tr>
+                    <td>{{ medicine.name }}</td>
+                    <td>{{ medicine.category }}</td>
+                    <td>{{ medicine.manufacturer }}</td>
+                    <td>{{ medicine.batch_number }}</td>
+                    <td>{{ medicine.expiry_date }}</td>
+                    <td>{{ medicine.quantity_in_stock }}</td>
+                    <td>{{ medicine.price }}</td>
+                    <td>
+                        <a href="{% url 'medicine_update' medicine.pk %}">Edit</a> |
+                        <a href="{% url 'medicine_delete' medicine.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
